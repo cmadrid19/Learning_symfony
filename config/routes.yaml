@@ -1,0 +1,29 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+adios:
+    path: /adios # path
+    controller: App\Controller\EjemploController::adios #namespace php
+
+hola:
+    path: /hola
+    controller: App\Controller\EjemploController::hola
+
+
+home:
+    path: /
+    controller: App\Controller\PublicController::home
+
+login:
+    path: /login
+    controller: App\Controller\PublicController::login
+
+signout:
+    path: /signout
+    controller: App\Controller\PublicController::signout
+
+catalogo:
+    path: /catalogo
+    controller: App\Controller\CatalogoController::index
