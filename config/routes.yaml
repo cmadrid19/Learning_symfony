@@ -26,4 +26,6 @@ signout:
 
 catalogo:
     path: /catalogo
-    controller: App\Controller\CatalogoController::index
+    controller: App\Controller\CatalogoController::catalogo
+
+    

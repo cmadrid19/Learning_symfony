@@ -1,49 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<style>
-		ul {
-			list-style-type: none;
-			margin: auto;
-			text-align: left;
-
-		}
-		ul > li {
-			padding: 2px;
-			margin: auto;
-		}
-	</style>
-
 	<div class="container">
-		List of books
-		<!--debug-->
-		{% dump libros %}
-		<ul class="list-group list-group-flush bg-secondary">
-			{% for libro in libros %}
-				<li class="list-group-item">
-					<p>
-						Title:
-						<b>
-							{{ libro.titulo }}
-						</b>
-					</p>
-					<p>
-						Authores:
-						<ul class="list-group">
+		<table class="table table-sm table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">
+						Title
+					</th>
+					<th scope="col">
+						Author
+					</th>
+					<th scope="col">
+						Editorial
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for libro in libros %}
+					<tr>
+						<td>
+							<b>
+								{{ libro.titulo }}
+							</b>
+						</td>
+						<td>
 							{% for author in libro.autores %}
-								<li class="list-group-item">
+								<p>
 									{{ author.nombre }}
-								</li>
+								</p>
 							{% endfor %}
-						</ul>
-					</p>
-					<p>
-						Editorial:
-						{{ libro.editorial.nombre }}
-					</p>
+						</td>
+						<td>
+							{{ libro.editorial.nombre }}
+						</td>
+					</tr>
+				{% endfor %}
 
-				</li>
-			{% endfor %}
-		</ul>
+			</tbody>
+		</table>
 	</div>
+
 {% endblock %}
